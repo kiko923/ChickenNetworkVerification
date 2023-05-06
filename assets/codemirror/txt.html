@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="lib/codemirror.css">
+  <link rel="stylesheet" href="theme/material-palenight.css">
+  <link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">
+  <title>Title</title>
+</head>
+<body>
+<form><textarea id="code" name="code">
+<?php
+$a = array('a' => 1, 'b' => 2, 3 => 'c');
+
+echo "$a[a] ${a[3] /* } comment */} {$a[b]} \$a[a]";
+
+function hello($who) {
+	return "Hello $who!";
+}
+?>
+<p>The program says <?= hello("World") ?>.</p>
+<script>
+	alert("And here is some JS code"); // also colored
+</script>
+</textarea></form>
+</body>
+<script src="lib/codemirror.js"></script>
+<script src="addon/edit/matchbrackets.js"></script>
+<script src="mode/htmlmixed/htmlmixed.js"></script>
+<script src="mode/xml/xml.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+<script src="mode/css/css.js"></script>
+<script src="mode/clike/clike.js"></script>
+<script src="mode/php/php.js"></script>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    mode: "application/x-httpd-php",
+    indentUnit: 4,
+    indentWithTabs: true
+  });
+  editor.setOption("theme", "material-palenight");
+</script>
+</html>

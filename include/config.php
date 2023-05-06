@@ -1,0 +1,9 @@
+<?php
+/*数据库配置*/
+define('DB_HOST','localhost');//数据库连接地址，默认：localhost或127.0.0.1
+define('DB_PORT','3306');//数据库端口号，默认3306
+define('DB_USER','');//数据库账号
+define('DB_PASSWD','');//数据库密码
+define('DB_NAME','');//数据库名称
+define('DB_PRE','ty_');//数据库表前缀(请勿修改,否则异常!)
+?>
